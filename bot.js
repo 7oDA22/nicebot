@@ -753,7 +753,7 @@ ${prefix}role humans اسم الرتبة
 		
 ////////////////////////////////////////		////////////////////////
 const adminprefix = "-"
-const devs = ['298047001239486466'];
+const devs = ['298047001239486466','490269792805322762'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
