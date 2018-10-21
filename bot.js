@@ -66,6 +66,7 @@ if (message.content === '~help') {
 	  .addField("**~createcolors :cyclone:**","** لـ اضافة 110 لون**")
       .addField("**~kick  :outbox_tray:**","**لـ طرد الأعضاء**")
       .addField("**~ban  :no_entry:**","**لـ حظر الأعضاء**")
+      .addField("**~link **","** سرفر سبورت**")
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
