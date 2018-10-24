@@ -809,7 +809,30 @@ client.on('message', message => {
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
 }
 });
-		
+const client= new Discord.Client();
+client.on('message', message => {
+var prefix = "~";
+
+    if (message.content === prefix + "date") {
+        if (!message.channel.guild) return message.reply(' This command only for servers ');
+        var currentTime = new Date(),
+            Year = currentTime.getFullYear(),
+            Month = currentTime.getMonth() + 1,
+            Day = currentTime.getDate();
+
+            var Date15= new Discord.RichEmbed()
+            .setTitle("「  Date - التاريخ 」 ")
+            .setColor('RANDOM')
+            .setTimestamp()
+            .setDescription( "「"~"+ Day + "~" + Month + "~" + Year + "」")
+             message.channel.sendEmbed(Date15);
+    }
+});
+
+
+
+
+	
 client.login(process.env.BOT_TOKEN);
 
 		
