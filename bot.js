@@ -809,7 +809,6 @@ client.on('message', message => {
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
 }
 });
-const client= new Discord.Client();
 client.on('message', message => {
 var prefix = "~";
 
