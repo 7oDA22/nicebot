@@ -823,7 +823,7 @@ var prefix = "~";
             .setTitle("「  Date - التاريخ 」 ")
             .setColor('RANDOM')
             .setTimestamp()
-            .setDescription( "「"~"+ Day + "~" + Month + "~" + Year + "」")
+            .setDescription( "「" Day +  + Month +  + Year + "」")
              message.channel.sendEmbed(Date15);
     }
 });
