@@ -809,24 +809,51 @@ client.on('message', message => {
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعة السيرفر**')
 }
 });
+
 client.on('message', message => {
-var prefix = "~";
+    var prefix = "~"
+if (message.content.startsWith(prefix + "uptime")) {
+   let uptime = client.uptime;
 
-    if (message.content === prefix + "date") {
-        if (!message.channel.guild) return message.reply(' This command only for servers ');
-        var currentTime = new Date(),
-            Year = currentTime.getFullYear(),
-            Month = currentTime.getMonth() + 1,
-            Day = currentTime.getDate();
+   let days = 0;
+   let hours = 0;
+   let minutes = 0;
+   let seconds = 0;
+   let notCompleted = true;
 
-            var Date15= new Discord.RichEmbed()
-            .setTitle("「  Date - التاريخ 」 ")
-            .setColor('RANDOM')
-            .setTimestamp()
-            .setDescription( "「 Day +  + Month +  + Year + 」")
-             message.channel.sendEmbed(Date15);
-    }
+   while (notCompleted) {
+
+       if (uptime >= 8.64e+7) {
+
+           days++;
+           uptime -= 8.64e+7;
+
+       } else if (uptime >= 3.6e+6) {
+
+           hours++;
+           uptime -= 3.6e+6;
+
+       } else if (uptime >= 60000) {
+
+           minutes++;
+           uptime -= 60000;
+
+       } else if (uptime >= 1000) {
+           seconds++;
+           uptime -= 1000;
+
+       }
+
+       if (uptime < 1000)  notCompleted = false;
+
+   }
+
+   message.channel.send("`" + `${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec` + "`");
+
+
+}
 });
+
 
 
 
